@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad obligatoria - Javascript Unidad 3</title>
+</head>
+<body>
+    <form>
+        <h1>Parte 1</h1>
+        <label for="usuario">Usuario:</label>
+        <input id="usuario" type="text">
+        <label for="edad">Edad:</label>
+        <input id="edad" type="number">
+        <br>
+        <button type="button" onclick="esMayor()">¿Es mayor?</button>
+        <div id="resultadoEsMayor"></div>
+    </form>
+
+    <script>
+        function esMayor(){
+            let edad = document.getElementById("edad").value;
+            let usuario = document.getElementById("usuario").value;
+            if (edad > 18){
+                alert(`${usuario} es mayor de edad`)
+            }
+            else{
+                alert(`${usuario} es menor de edad`)
+            }
+        }
+    </script>
+
+
+
+
+
+
+    <form>
+        <h1>Parte 2</h1>
+        <label for="usuario1">Usuario:</label>
+        <input id="usuario1" type="text">
+        <label for="edad1">Edad:</label>
+        <input id="edad1" type="number">
+        <br>
+        <label for="usuario2">Usuario:</label>
+        <input id="usuario2" type="text">
+        <label for="edad2">Edad:</label>
+        <input id="edad2" type="number">
+        <br>
+        <label for="usuario3">Usuario:</label>
+        <input id="usuario3" type="text">
+        <label for="edad3">Edad:</label>
+        <input id="edad3" type="number">
+        <br>
+        <button type="button" onclick="cualEsMayor()">¿Cuál es mayor?</button>
+        <div></div>
+    </form>
+
+    <script>
+        function cualEsMayor(){
+            var usuarios = []
+            var edades = []
+            
+            usuarios[0] = document.getElementById("usuario1").value;
+            usuarios[1] = document.getElementById("usuario2").value;
+            usuarios[2] = document.getElementById("usuario3").value;
+            edades[0] = document.getElementById("edad1").value;
+            edades[1] = document.getElementById("edad2").value;
+            edades[2] = document.getElementById("edad3").value;
+
+            var mayor = Math.max(...edades)
+            console.log(mayor)
+
+            var pos = edades.indexOf(mayor) 
+            console.log(pos)
+
+
+
+            // if (mayor == edades[0]){
+            //     alert(`${usuarios[0]} es el de mayor edad. Tiene ${edades[0]} años.`)
+            // }
+            // else{
+            //     if(mayor == edades[1]){
+            //         alert(`${usuarios[1]} es el de mayor edad. Tiene ${edades[1]} años.`)
+            //     }
+            //     else{
+            //         if (mayor == edades[2]){
+            //             alert(`${usuarios[2]} es el de mayor edad. Tiene ${edades[2]} años.`)
+            //         }
+            //     }
+            // }
+            switch (pos) {
+                case [0]:
+                alert(`${usuarios[0]} es el de mayor edad. Tiene ${edades[0]} años.`)
+                break;
+                case [1]:
+                alert(`${usuarios[1]} es el de mayor edad. Tiene ${edades[1]} años.`)
+                break;
+                case [2]:
+                alert(`${usuarios[2]} es el de mayor edad. Tiene ${edades[2]} años.`)
+                break;
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
